@@ -1,8 +1,10 @@
-FROM alpine:testing
+FROM alpine:edge
 
 WORKDIR /data
 
-RUN apk add llvm-libunwind librespot \
+RUN echo 'https://dl-cdn.alpinelinux.org/alpine/edge/testing/' >> /etc/apk/repositories \
+ && apk update \
+ && apk add llvm-libunwind librespot \
  && mkfifo /data/fifo
 
 ENV SPOTIFY_NAME Blackview
