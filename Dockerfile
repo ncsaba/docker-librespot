@@ -2,7 +2,7 @@ FROM alpine:edge
 
 WORKDIR /data
 
-RUN apk -U add curl cargo portaudio-dev protobuf-dev \
+RUN apk -U add curl cargo portaudio-dev protobuf-dev cmake \
  && cd /root \
  && curl -LO https://github.com/librespot-org/librespot/archive/master.zip \
  && unzip master.zip \
