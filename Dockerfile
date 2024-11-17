@@ -4,6 +4,7 @@ WORKDIR /data
 
 RUN apk -U add curl cargo portaudio-dev protobuf-dev cmake \
  && cd /root \
+ && cargo install --force --locked bindgen-cli \
  && curl -LO https://github.com/librespot-org/librespot/archive/master.zip \
  && unzip master.zip \
  && cd librespot-master \
